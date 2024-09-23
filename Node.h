@@ -2,11 +2,12 @@
 Name: Nathan Han
 netID: nxh230021
 Date: 9/14/2024
-The Node class defines single nodes for the LinkedList, containing a next pointer
-and a driver object inside.
-Methods include overloaded comparison operators to compare the drivers inside
-the nodes, getting and setting the next node, getting the driver object inside 
-the node, and overloaded << operator to print the driver object inside the node
+The Node class is templated.
+It defines single nodes for the LinkedList, containing a next pointer
+and a undefined type T object inside (which will have a Driver object).
+Methods include overloaded comparison operators to compare the object inside
+the nodes, getting and setting the next node, getting the object inside 
+the node, and overloaded << operator to print the object inside the node
 */
 #ifndef NODE_H
 #define NODE_H
@@ -16,11 +17,12 @@ template <typename T>
 class Node
 {
     public:
-        //default constructor and overloaded constructor (with driver obj), initialize node with data, both sets next pointer to nullptr
+        //default constructor and overloaded constructor (with type T), initialize node with data, both sets next pointer to nullptr
+        //T will be Driver object
         Node(){next=nullptr;}
         Node(T data){this->data=data; next=nullptr;}
 
-        //retrieve driver obj from the node
+        //retrieve T/driver obj from the node
         T getDriver() const {return data;}
 
         //retrieve and set next node which is used in LinkedList to link nodes together
@@ -36,11 +38,10 @@ class Node
         friend std::ostream& operator<<(std::ostream& out, const Node<driverdata>& node);
 
         //destructor (not used in this case because drivers are not dynamically allocated)
-        ~Node(){}
-
-
+        ~Node(){};
 
     private:
+    //next node and data of type T (used to store driver)
         T data;
         Node* next;
 };
@@ -49,10 +50,11 @@ class Node
 Name: Nathan Han
 netID: nxh230021
 Date: 9/14/2024
-Node class function definitions
+Node class: template function definitions
 */
 
 /*
+type T: will be used only for type Driver
 the overloaded << operator allows printing of each node data
 by calling the driver class overloaded << operator by
 retrieving the driver object inside the node
@@ -67,6 +69,7 @@ std::ostream& operator<<(std::ostream& out, const Node<T>& node)
 }
 
 /*
+type T: will be used only for type Driver
 the overloaded > operator compares the implicit parameter
 (left operand/driver) to the rightside driver.
 This method calls the overloaded > operator in the Driver 
@@ -81,6 +84,7 @@ bool Node<T>::operator>(const Node& node) const
 }
 
 /*
+type T: will be used only for type Driver
 the overloaded > operator compares the implicit parameter
 (left operand/driver) to the rightside driver.
 This method calls the overloaded > operator in the Driver 

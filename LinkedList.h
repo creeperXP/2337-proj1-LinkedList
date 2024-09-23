@@ -2,9 +2,10 @@
 Name: Nathan Han
 netID: nxh230021
 Date: 9/14/2024
-The LinkedList class allows a singly linked list to be made,
+The LinkedList templated class allows a singly linked list to be made with nodes of type T
+(where T will be used as an driver type),
 with functions including getting/setting head, tail pointers, 
-using insertion sort (sortList()), and inserting a node at the end of the linked list
+using insertion sort (sortList()), and inserting a node of type T at the end of the linked list
 */
 
 #ifndef LINKEDLIST_H
@@ -17,32 +18,42 @@ class LinkedList
     //default constructor: sets head and tail to nullptr
     LinkedList(){head=nullptr; tail=nullptr;}
 
-    //get/set head and tail to
+    //mutator and accessor for head and tail
     Node<T>* getHead() const {return head;}
     Node<T>* getTail() const {return tail;}
     void setHead(Node<T>* head) {this->head = head;}
     void setTail(Node<T>* tail) {this->tail = tail;}
 
-    //insert node at end of linked list
+    //insert node of type T at end of linked list
     void insertNode(Node<T>*);
 
-    //insertion sort in ascending order by either driver or area
+    //insertion sort in ascending order 
+    //type T: used for driver objects only (so sort based on driver name or area)
     void sortList();
 
     //overloaded << operator that calls the node overloaded << to later print the driver object
     template <typename driverdata>
     friend std::ostream& operator<<(std::ostream& out, const LinkedList<driverdata>& list);
 
-    //destructor to delete dynamically allocated nodesdo i 
+    //destructor to delete dynamically allocated nodes  
     ~LinkedList();
 
     
     private:
+    //head and node tail of type T (will be used for type Driver)
         Node<T>* head;
         Node<T>* tail;
 };
 
 /*
+Name: Nathan Han
+netID: nxh230021
+Date: 9/14/2024
+LinkedList templated class function definitions
+*/
+
+/*
+type T: will be used only for type Driver
 the overloaded << operator allows printing of each node data inside
 of the linked list.
 While the current node is not null, print that node's driver,
@@ -63,6 +74,7 @@ std::ostream& operator<<(std::ostream& out, const LinkedList<T>& list)
 }
 
 /*
+type T: will be used only for type Driver
 insert a new node at the end of the list.
 If tail is null, set head and tail pointer to the inserted
 node since it is the first node.
@@ -86,6 +98,7 @@ void LinkedList<T>::insertNode(Node<T>* node)
 }
 
 /*
+type T: will be used only for type Driver
 sort the linked list using
 insertion sort, ascending order
 */
@@ -119,7 +132,7 @@ void LinkedList<T>::sortList()
         else
         {
             /*
-            if current is not the smallest in newlist, 
+            if current is not the smallest in newlist (the data inside: either name or area),
             find insertion point by going through new list and seeing if the driver
             is less than current
             */
@@ -143,9 +156,9 @@ void LinkedList<T>::sortList()
 }
 
 /*
+type T: will be used only for type Driver
 the linked list destructor goes through each node
-and deletes the node, also deleting the driver
-object in the node
+and deletes the node, causing driver obj to be deleted
 */
 template <typename T>
 LinkedList<T>::~LinkedList()
