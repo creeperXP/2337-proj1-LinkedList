@@ -1,7 +1,4 @@
 /*
-Name: Nathan Han
-netID: nxh230021
-Date: 9/14/2024
 The Driver class allows Driver objects to be made, with no parameters or
 with a name parameter to initialize the name of the Driver.
 Methods include changing/accessing name and area, overloaded < > and ==
