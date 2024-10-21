@@ -1,5 +1,5 @@
 /*
-LinkedList class function definitions
+LinkedList class function definitions (not used because class is templated)
 */
 
 //#include <iostream>
