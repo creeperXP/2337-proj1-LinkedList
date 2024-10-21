@@ -1,8 +1,5 @@
 
 /*
-Name: Nathan Han
-netID: nxh230021
-Date: 9/14/2024
 This program reads a file containing driver names and coordinates, calculates the area the driver
 traveled, and stores each driver in a linked list.
 A second file is read that gives commands to find a specific area/driver or sort
