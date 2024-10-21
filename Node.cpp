@@ -1,8 +1,5 @@
 /*
-Name: Nathan Han
-netID: nxh230021
-Date: 9/14/2024
-Node class function definitions
+Node class function definitions (not used because Node is templated)
 */
 /*
 #include "Node.h"
