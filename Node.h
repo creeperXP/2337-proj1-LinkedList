@@ -1,7 +1,4 @@
 /*
-Name: Nathan Han
-netID: nxh230021
-Date: 9/14/2024
 The Node class is templated.
 It defines single nodes for the LinkedList, containing a next pointer
 and a undefined type T object inside (which will have a Driver object).
@@ -45,13 +42,6 @@ class Node
         T data;
         Node* next;
 };
-
-/*
-Name: Nathan Han
-netID: nxh230021
-Date: 9/14/2024
-Node class: template function definitions
-*/
 
 /*
 type T: will be used only for type Driver
