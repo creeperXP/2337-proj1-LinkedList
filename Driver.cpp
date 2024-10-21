@@ -1,7 +1,4 @@
 /*
-Name: Nathan Han
-netID: nxh230021
-Date: 9/14/2024
 Driver class function definitions
 */
 #include "Driver.h"
