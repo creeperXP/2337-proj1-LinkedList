@@ -1,7 +1,4 @@
 /*
-Name: Nathan Han
-netID: nxh230021
-Date: 9/14/2024
 The LinkedList templated class allows a singly linked list to be made with nodes of type T
 (where T will be used as an driver type),
 with functions including getting/setting head, tail pointers, 
@@ -44,13 +41,6 @@ class LinkedList
         Node<T>* head;
         Node<T>* tail;
 };
-
-/*
-Name: Nathan Han
-netID: nxh230021
-Date: 9/14/2024
-LinkedList templated class function definitions
-*/
 
 /*
 type T: will be used only for type Driver
